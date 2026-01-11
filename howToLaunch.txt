@@ -1,0 +1,58 @@
+Project ACL Walkthrough
+Overview
+I have successfully implemented the full solution for the ACL Project, including the C++ TSP Server and the Java MVC Client.
+
+Files Created
+C++ Server: 
+server_tsp.cpp
+Java Client (in client/ folder):
+ApplicationLivraison.java
+ (Main entry point)
+Ville.java
+, 
+Camion.java
+, 
+ServiceReseau.java
+, 
+ComposantCarte.java
+, 
+LecteurDonnees.java
+Data: 
+villes.json
+ (Sample data for 10 French cities)
+How to Run
+1. Start the C++ Server
+Open a terminal in the project folder and run:
+
+./server
+You should see "=== SERVEUR TSP DEMARRE (Port 8080) ==="
+
+2. Start the Java Client
+Open another terminal window and run:
+
+java client.ApplicationLivraison
+3. Usage
+Click "1. Charger Données (JSON)".
+A file dialog will open.
+To load a single file: Select a 
+.json
+ file.
+To load multiple files: Select a Directory (e.g., your 13_fichiers_JSON folder). The application will load ALL 
+.json
+ files inside it.
+Road Types: The application automatically looks for .csv files with the same name as the JSONs (e.g., Bretagne.csv) in the same folder to load road types (Autoroute, Nationale, etc.).
+The cities will appear on the map.
+2 Trucks (Red and Blue) will be simulated.
+Click "2. Calculer Tournées (C++)".
+The Java client sends the cities to the C++ server.
+The server calculates the optimal route using the Nearest Neighbor algorithm.
+The map updates with the optimized routes drawn in Red and Blue.
+Compilation (Already Done)
+The project has been compiled for you:
+
+server.exe (from g++ server_tsp.cpp -o server -lws2_32)
+.class files in client/ (from javac client/*.java)
+If you need to recompile:
+
+g++ server_tsp.cpp -o server -lws2_32
+javac client/*.java

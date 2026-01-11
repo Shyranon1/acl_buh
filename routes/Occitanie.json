@@ -1,0 +1,22 @@
+[
+  {"ville": "Toulouse", "latitude": 43.60, "longitude": 1.44},
+  {"ville": "Montpellier", "latitude": 43.61, "longitude": 3.87},
+  {"ville": "Nîmes", "latitude": 43.83, "longitude": 4.36},
+  {"ville": "Perpignan", "latitude": 42.70, "longitude": 2.89},
+  {"ville": "Béziers", "latitude": 43.34, "longitude": 3.21},
+  {"ville": "Narbonne", "latitude": 43.18, "longitude": 3.00},
+  {"ville": "Albi", "latitude": 43.93, "longitude": 2.15},
+  {"ville": "Carcassonne", "latitude": 43.21, "longitude": 2.35},
+  {"ville": "Mende", "latitude": 44.52, "longitude": 3.50},
+  {"ville": "Tarbes", "latitude": 43.23, "longitude": 0.07},
+  {"ville": "Montauban", "latitude": 44.02, "longitude": 1.35},
+  {"ville": "Rodez", "latitude": 44.35, "longitude": 2.57},
+  {"ville": "Auch", "latitude": 43.65, "longitude": 0.59},
+  {"ville": "Cahors", "latitude": 44.45, "longitude": 1.44},
+  {"ville": "Millau", "latitude": 44.10, "longitude": 3.08},
+  {"ville": "Pamiers", "latitude": 43.12, "longitude": 1.61},
+  {"ville": "Foix", "latitude": 42.96, "longitude": 1.60},
+  {"ville": "Castres", "latitude": 43.60, "longitude": 2.24},
+  {"ville": "Lourdes", "latitude": 43.10, "longitude": -0.05},
+  {"ville": "Sète", "latitude": 43.40, "longitude": 3.68}
+]

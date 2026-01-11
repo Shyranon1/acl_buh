@@ -1,0 +1,22 @@
+[
+  {"ville": "Dijon", "latitude": 47.32, "longitude": 5.04},
+  {"ville": "Besançon", "latitude": 47.24, "longitude": 6.02},
+  {"ville": "Belfort", "latitude": 47.64, "longitude": 6.85},
+  {"ville": "Chalon-sur-Saône", "latitude": 46.78, "longitude": 4.85},
+  {"ville": "Auxerre", "latitude": 47.80, "longitude": 3.57},
+  {"ville": "Nevers", "latitude": 46.99, "longitude": 3.16},
+  {"ville": "Mâcon", "latitude": 46.32, "longitude": 4.83},
+  {"ville": "Sens", "latitude": 48.20, "longitude": 3.27},
+  {"ville": "Montbéliard", "latitude": 47.51, "longitude": 6.80},
+  {"ville": "Dole", "latitude": 47.09, "longitude": 5.49},
+  {"ville": "Le Creusot", "latitude": 46.81, "longitude": 4.45},
+  {"ville": "Beaune", "latitude": 47.02, "longitude": 4.84},
+  {"ville": "Montceau-les-Mines", "latitude": 46.70, "longitude": 4.39},
+  {"ville": "Lons-le-Saunier", "latitude": 46.67, "longitude": 5.55},
+  {"ville": "Pontarlier", "latitude": 46.91, "longitude": 6.33},
+  {"ville": "Vesoul", "latitude": 47.62, "longitude": 6.16},
+  {"ville": "Chenôve", "latitude": 47.29, "longitude": 5.03},
+  {"ville": "Audincourt", "latitude": 47.48, "longitude": 6.85},
+  {"ville": "Autun", "latitude": 46.95, "longitude": 4.29},
+  {"ville": "Talant", "latitude": 47.32, "longitude": 5.06}
+]

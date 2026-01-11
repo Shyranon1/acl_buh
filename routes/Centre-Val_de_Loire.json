@@ -1,0 +1,21 @@
+[
+  {"ville": "Tours", "latitude": 47.39, "longitude": 0.68},
+  {"ville": "Orléans", "latitude": 47.90, "longitude": 1.91},
+  {"ville": "Blois", "latitude": 47.59, "longitude": 1.34},
+  {"ville": "Chartres", "latitude": 48.45, "longitude": 1.49},
+  {"ville": "Bourges", "latitude": 47.08, "longitude": 2.40},
+  {"ville": "Châteauroux", "latitude": 46.81, "longitude": 1.70},
+  {"ville": "Vierzon", "latitude": 47.23, "longitude": 2.07},
+  {"ville": "Issoudun", "latitude": 46.95, "longitude": 1.99},
+  {"ville": "Dreux", "latitude": 48.73, "longitude": 1.37},
+  {"ville": "Saint-Amand-Montrond", "latitude": 46.72, "longitude": 2.51},
+  {"ville": "Romorantin-Lanthenay", "latitude": 47.36, "longitude": 1.75},
+  {"ville": "Gien", "latitude": 47.68, "longitude": 2.63},
+  {"ville": "Montargis", "latitude": 47.99, "longitude": 2.73},
+  {"ville": "Vendôme", "latitude": 47.80, "longitude": 1.06},
+  {"ville": "Amboise", "latitude": 47.41, "longitude": 0.98},
+  {"ville": "Loches", "latitude": 47.13, "longitude": 0.99},
+  {"ville": "Chinon", "latitude": 47.17, "longitude": 0.24},
+  {"ville": "Sully-sur-Loire", "latitude": 47.77, "longitude": 2.38},
+  {"ville": "Nogent-le-Rotrou", "latitude": 48.32, "longitude": 0.83}
+]

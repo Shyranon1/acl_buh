@@ -1,0 +1,19 @@
+[
+  {"ville": "Rennes", "latitude": 48.11, "longitude": -1.68},
+  {"ville": "Brest", "latitude": 48.39, "longitude": -4.50},
+  {"ville": "Quimper", "latitude": 47.99, "longitude": -4.11},
+  {"ville": "Lorient", "latitude": 47.75, "longitude": -3.36},
+  {"ville": "Vannes", "latitude": 47.66, "longitude": -2.76},
+  {"ville": "Saint-Malo", "latitude": 48.65, "longitude": -2.02},
+  {"ville": "Dinan", "latitude": 48.45, "longitude": -2.04},
+  {"ville": "Fougères", "latitude": 48.35, "longitude": -1.20},
+  {"ville": "Redon", "latitude": 47.65, "longitude": -2.08},
+  {"ville": "Châteaulin", "latitude": 48.20, "longitude": -4.09},
+  {"ville": "Lanester", "latitude": 47.77, "longitude": -3.34},
+  {"ville": "Pontivy", "latitude": 48.05, "longitude": -2.98},
+  {"ville": "Morlaix", "latitude": 48.59, "longitude": -3.83},
+  {"ville": "Ploufragan", "latitude": 48.52, "longitude": -2.76},
+  {"ville": "Saint-Pol-de-Léon", "latitude": 48.69, "longitude": -3.99},
+  {"ville": "Carhaix-Plouguer", "latitude": 48.28, "longitude": -3.57},
+  {"ville": "Guingamp", "latitude": 48.56, "longitude": -3.15}
+]

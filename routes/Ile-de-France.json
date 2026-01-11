@@ -1,0 +1,17 @@
+[
+  {"ville": "Paris", "latitude": 48.86, "longitude": 2.35},
+  {"ville": "Versailles", "latitude": 48.80, "longitude": 2.13},
+  {"ville": "Boulogne-Billancourt", "latitude": 48.84, "longitude": 2.24},
+  {"ville": "Saint-Denis", "latitude": 48.93, "longitude": 2.36},
+  {"ville": "Nanterre", "latitude": 48.89, "longitude": 2.21},
+  {"ville": "Créteil", "latitude": 48.79, "longitude": 2.46},
+  {"ville": "Colombes", "latitude": 48.92, "longitude": 2.25},
+  {"ville": "Aulnay-sous-Bois", "latitude": 48.94, "longitude": 2.50},
+  {"ville": "Argenteuil", "latitude": 48.95, "longitude": 2.25},
+  {"ville": "Asnières-sur-Seine", "latitude": 48.91, "longitude": 2.29},
+  {"ville": "Montreuil", "latitude": 48.86, "longitude": 2.44},
+  {"ville": "Levallois-Perret", "latitude": 48.89, "longitude": 2.28},
+  {"ville": "Antony", "latitude": 48.75, "longitude": 2.30},
+  {"ville": "Cergy", "latitude": 49.03, "longitude": 2.06},
+  {"ville": "Poissy", "latitude": 48.93, "longitude": 2.04}
+]

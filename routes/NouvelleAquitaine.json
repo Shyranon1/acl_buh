@@ -1,0 +1,23 @@
+[
+  { "ville": "Bordeaux", "latitude": 44.84, "longitude": -0.58 },
+  { "ville": "Limoges", "latitude": 45.85, "longitude": 1.26 },
+  { "ville": "Poitiers", "latitude": 46.58, "longitude": 0.34 },
+  { "ville": "Pau", "latitude": 43.30, "longitude": -0.36 },
+  { "ville": "La Rochelle", "latitude": 46.16, "longitude": -1.15 },
+  { "ville": "Angoulême", "latitude": 45.65, "longitude": 0.16 },
+  { "ville": "Niort", "latitude": 46.33, "longitude": -0.46 },
+  { "ville": "Bayonne", "latitude": 43.49, "longitude": -1.48 },
+  { "ville": "Brive-la-Gaillarde", "latitude": 45.16, "longitude": 1.53 },
+  { "ville": "Talence", "latitude": 44.80, "longitude": -0.58 },
+  { "ville": "Mérignac", "latitude": 44.83, "longitude": -0.62 },
+  { "ville": "Pessac", "latitude": 44.82, "longitude": -0.66 },
+  { "ville": "Villenave-d'Ornon", "latitude": 44.79, "longitude": -0.60 },
+  { "ville": "Arcachon", "latitude": 44.65, "longitude": -1.17 },
+  { "ville": "Biarritz", "latitude": 43.48, "longitude": -1.55 },
+  { "ville": "Royan", "latitude": 45.63, "longitude": -1.02 },
+  { "ville": "Libourne", "latitude": 44.92, "longitude": -0.24 },
+  { "ville": "Dax", "latitude": 43.71, "longitude": -1.05 },
+  { "ville": "Mont-de-Marsan", "latitude": 43.89, "longitude": -0.50 },
+  { "ville": "Agen", "latitude": 44.20, "longitude": 0.62
+  }
+]

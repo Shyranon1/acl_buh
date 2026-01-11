@@ -1,0 +1,23 @@
+[
+  { "ville": "Le Havre", "latitude": 49.49, "longitude": 0.10 },
+  { "ville": "Rouen", "latitude": 49.44, "longitude": 1.10 },
+  { "ville": "Caen", "latitude": 49.18, "longitude": -0.37 },
+  { "ville": "Cherbourg-en-Cotentin", "latitude": 49.64, "longitude": -1.62 },
+  { "ville": "Évreux", "latitude": 49.02, "longitude": 1.15 },
+  { "ville": "Sotteville-lès-Rouen", "latitude": 49.40, "longitude": 1.10 },
+  { "ville": "Saint-Étienne-du-Rouvray", "latitude": 49.36, "longitude": 1.09 },
+  { "ville": "Dieppe", "latitude": 49.93, "longitude": 1.08 },
+  { "ville": "Le Grand-Quevilly", "latitude": 49.39, "longitude": 1.03 },
+  { "ville": "Alençon", "latitude": 48.43, "longitude": 0.09 },
+  { "ville": "Vernon", "latitude": 49.09, "longitude": 1.47 },
+  { "ville": "Hérouville-Saint-Clair", "latitude": 49.20, "longitude": -0.32 },
+  { "ville": "Le Petit-Quevilly", "latitude": 49.42, "longitude": 1.05 },
+  { "ville": "Mont-Saint-Aignan", "latitude": 49.46, "longitude": 1.08 },
+  { "ville": "Lisieux", "latitude": 49.14, "longitude": 0.22 },
+  { "ville": "Saint-Lô", "latitude": 49.12, "longitude": -1.09 },
+  { "ville": "Louviers", "latitude": 49.21, "longitude": 1.17 },
+  { "ville": "Fécamp", "latitude": 49.76, "longitude": 0.38 },
+  { "ville": "Vire Normandie", "latitude": 48.84, "longitude": -0.89 },
+  { "ville": "Elbeuf", "latitude": 49.29, "longitude": 1.00
+  }
+]

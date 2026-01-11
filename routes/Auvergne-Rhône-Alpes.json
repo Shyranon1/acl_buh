@@ -1,0 +1,21 @@
+[
+	{"ville": "Lyon", "latitude": 45.76, "longitude": 4.84},
+	{"ville": "Grenoble", "latitude": 45.19, "longitude": 5.74},
+	{"ville": "Saint-Étienne", "latitude": 45.44, "longitude": 4.39},
+	{"ville": "Clermont-Ferrand", "latitude": 45.78, "longitude": 3.08},
+	{"ville": "Villeurbanne", "latitude": 45.77, "longitude": 4.88},
+	{"ville": "Annecy", "latitude": 45.90, "longitude": 6.13},
+	{"ville": "Chambéry", "latitude": 45.56, "longitude": 5.92},
+	{"ville": "Valence", "latitude": 44.93, "longitude": 4.89},
+	{"ville": "Vienne", "latitude": 45.52, "longitude": 4.88},
+	{"ville": "Bourg-en-Bresse", "latitude": 46.21, "longitude": 5.22},
+	{"ville": "Montélimar", "latitude": 44.56, "longitude": 4.75},
+	{"ville": "Roanne", "latitude": 46.03, "longitude": 4.08},
+	{"ville": "Annemasse", "latitude": 46.19, "longitude": 6.24},
+	{"ville": "Aix-les-Bains", "latitude": 45.69, "longitude": 5.92},
+	{"ville": "Thonon-les-Bains", "latitude": 46.37, "longitude": 6.48},
+	{"ville": "Le Puy-en-Velay", "latitude": 45.04, "longitude": 3.89},
+	{"ville": "Aurillac", "latitude": 44.92, "longitude": 2.44},
+	{"ville": "Albertville", "latitude": 45.67, "longitude": 6.39},
+	{"ville": "Villefranche-sur-Saône", "latitude": 45.98, "longitude": 4.72}
+]

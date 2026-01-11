@@ -1,0 +1,20 @@
+[
+  {"ville": "Marseille", "latitude": 43.30, "longitude": 5.37},
+  {"ville": "Nice", "latitude": 43.70, "longitude": 7.27},
+  {"ville": "Toulon", "latitude": 43.12, "longitude": 5.93},
+  {"ville": "Aix-en-Provence", "latitude": 43.53, "longitude": 5.44},
+  {"ville": "Avignon", "latitude": 43.95, "longitude": 4.81},
+  {"ville": "Antibes", "latitude": 43.58, "longitude": 7.12},
+  {"ville": "Cannes", "latitude": 43.55, "longitude": 7.02},
+  {"ville": "Fréjus", "latitude": 43.43, "longitude": 6.74},
+  {"ville": "Grasse", "latitude": 43.66, "longitude": 6.92},
+  {"ville": "Arles", "latitude": 43.68, "longitude": 4.63},
+  {"ville": "Martigues", "latitude": 43.40, "longitude": 5.05},
+  {"ville": "Cagnes-sur-Mer", "latitude": 43.66, "longitude": 7.15},
+  {"ville": "Draguignan", "latitude": 43.54, "longitude": 6.47},
+  {"ville": "Manosque", "latitude": 43.83, "longitude": 5.79},
+  {"ville": "Aubagne", "latitude": 43.29, "longitude": 5.57},
+  {"ville": "Istres", "latitude": 43.51, "longitude": 4.98},
+  {"ville": "Salon-de-Provence", "latitude": 43.64, "longitude": 5.10},
+  {"ville": "Menton", "latitude": 43.78, "longitude": 7.50}
+]

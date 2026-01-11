@@ -1,0 +1,22 @@
+[
+  { "ville": "Lille", "latitude": 50.63, "longitude": 3.07 },
+  { "ville": "Roubaix", "latitude": 50.69, "longitude": 3.17 },
+  { "ville": "Dunkerque", "latitude": 51.03, "longitude": 2.37 },
+  { "ville": "Valenciennes", "latitude": 50.36, "longitude": 3.52 },
+  { "ville": "Amiens", "latitude": 49.89, "longitude": 2.30 },
+  { "ville": "Tourcoing", "latitude": 50.72, "longitude": 3.16 },
+  { "ville": "Douai", "latitude": 50.37, "longitude": 3.08 },
+  { "ville": "Cambrai", "latitude": 50.18, "longitude": 3.24 },
+  { "ville": "Saint-Quentin", "latitude": 49.84, "longitude": 3.29 },
+  { "ville": "Béthune", "latitude": 50.53, "longitude": 2.64 },
+  { "ville": "Arras", "latitude": 50.29, "longitude": 2.78 },
+  { "ville": "Lens", "latitude": 50.43, "longitude": 2.83 },
+  { "ville": "Laon", "latitude": 49.56, "longitude": 3.62 },
+  { "ville": "Soissons", "latitude": 49.38, "longitude": 3.32 },
+  { "ville": "Compiègne", "latitude": 49.41, "longitude": 2.82 },
+  { "ville": "Creil", "latitude": 49.26, "longitude": 2.48 },
+  { "ville": "Senlis", "latitude": 49.20, "longitude": 2.58 },
+  { "ville": "Beauvais", "latitude": 49.43, "longitude": 2.09 },
+  { "ville": "Château-Thierry", "latitude": 49.04, "longitude": 3.39 },
+  { "ville": "Noyon", "latitude": 49.58, "longitude": 3.00 }
+]

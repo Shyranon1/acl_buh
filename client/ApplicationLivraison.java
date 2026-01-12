@@ -60,6 +60,13 @@ public class ApplicationLivraison extends JFrame {
 
     public ApplicationLivraison() {
         super("Logistics Optimizer Pro | ACL 2026");
+
+        // Prefer "routes" directory by default if it exists
+        java.io.File routesDir = new java.io.File("routes");
+        if (routesDir.exists() && routesDir.isDirectory()) {
+            this.currentDirectory = routesDir;
+        }
+
         this.serviceReseau = new ServiceReseau();
         this.flotte = new ArrayList<>();
 
@@ -282,7 +289,7 @@ public class ApplicationLivraison extends JFrame {
         // Remove directory selection to avoid confusion (user asked for multi-file
         // selection)
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        fileChooser.setCurrentDirectory(new java.io.File("."));
+        fileChooser.setCurrentDirectory(currentDirectory);
 
         if (fileChooser.showOpenDialog(this) != JFileChooser.APPROVE_OPTION)
             return;

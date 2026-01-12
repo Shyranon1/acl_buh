@@ -3,7 +3,7 @@ Write-Host "Starting ACL Project..."
 # Compile Java Client (Target Java 8 for compatibility)
 Write-Host "Compiling Client..."
 # We use --release 8 because the system has JDK 21 but JRE 1.8 active in PATH
-javac --release 8 -encoding UTF-8 client/*.java
+javac --release 8 -Xlint:-options -encoding UTF-8 client/*.java
 if ($LASTEXITCODE -ne 0) {
     Write-Host "Compilation failed!" -ForegroundColor Red
     Pause

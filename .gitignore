@@ -1,0 +1,16 @@
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Logs
+*.log
+
+# Java
+*.class
+bin/
+
+# IDEs
+.vscode/
+.idea/

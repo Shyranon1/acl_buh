@@ -1,0 +1,40 @@
+Launch Script Walkthrough
+I have created a 
+launch.ps1
+ script to simplify starting the ACL project.
+
+Changes
+Created 
+launch.ps1
+ in the project root.
+Verification Results
+Automated Verification
+Ran 
+.\launch.ps1
+ in PowerShell.
+
+Fixed Issue: The user encountered a libgcc_s_dw2-1.dll missing error.
+
+Resolution: Recompiled 
+server.exe
+ with -static linking and fixed PATH environment for g++.
+
+Verified 
+server.exe
+ was updated.
+
+Output confirmed:
+
+Starting ACL Project...
+Launching Server...
+Launching Client...
+Done! Server and Client should be running.
+Processes were launched successfully.
+
+How to Use
+Double-click 
+launch.ps1
+ or run it from a PowerShell terminal:
+
+.\launch.ps1
+This will open the Server and Client windows automatically.

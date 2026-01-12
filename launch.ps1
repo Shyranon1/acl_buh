@@ -18,6 +18,15 @@ if ($LASTEXITCODE -ne 0) {
     exit
 }
 
+# Compile C++ Server
+Write-Host "Compiling Server..."
+g++ server/server_tsp.cpp -o server/server.exe -lws2_32
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Server compilation failed!" -ForegroundColor Red
+    Pause
+    exit
+}
+
 # Start the C++ Server
 Write-Host "Launching Server..."
 Start-Process -FilePath ".\server\server.exe"

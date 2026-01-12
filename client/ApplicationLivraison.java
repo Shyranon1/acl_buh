@@ -28,11 +28,9 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Component;
 import java.awt.Cursor;
-import java.io.IOException;
+
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
 
 public class ApplicationLivraison extends JFrame {
 

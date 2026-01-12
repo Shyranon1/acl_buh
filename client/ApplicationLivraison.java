@@ -191,6 +191,7 @@ public class ApplicationLivraison extends JFrame {
                 return;
 
             repartirVilles(nb);
+            carte.setRoutesMap(routesMap); // Update map with road types
             JOptionPane.showMessageDialog(this, "Chargement terminé : " + selectedNames.size() + " région(s).");
         });
         sidebar.add(Box.createRigidArea(new Dimension(0, 5)));
@@ -222,6 +223,7 @@ public class ApplicationLivraison extends JFrame {
         btnCharger.addActionListener(e -> {
             int nb = (Integer) spinnerNbCamions.getValue();
             chargerDonneesSimulees(nb);
+            carte.setRoutesMap(routesMap); // Pass the map of road types
             carte.setFlotte(flotte);
             statusLabel.setText("Status: " + nb + " camions chargés.");
             JOptionPane.showMessageDialog(this, "Données chargées avec succès.\n" + nb + " camions prêts.");

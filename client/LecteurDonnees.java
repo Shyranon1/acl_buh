@@ -19,7 +19,9 @@ public class LecteurDonnees {
         Pattern patternLat = Pattern.compile("\"(?:lat|latitude)\"\\s*:\\s*([-+]?[0-9]*\\.?[0-9]+)");
         Pattern patternLon = Pattern.compile("\"(?:lon|longitude)\"\\s*:\\s*([-+]?[0-9]*\\.?[0-9]+)");
 
-        try (BufferedReader br = new BufferedReader(new FileReader(cheminFichier))) {
+        try (java.io.BufferedReader br = new java.io.BufferedReader(
+                new java.io.InputStreamReader(new java.io.FileInputStream(cheminFichier),
+                        java.nio.charset.StandardCharsets.ISO_8859_1))) {
             String ligne;
             while ((ligne = br.readLine()) != null) {
                 // On cherche les motifs dans la ligne
@@ -37,7 +39,6 @@ public class LecteurDonnees {
             }
         } catch (IOException e) {
             System.err.println("Erreur lecture fichier : " + e.getMessage());
-            // En cas d'erreur, on retourne une liste vide, l'appli affichera une alerte
         }
         return liste;
     }
@@ -50,10 +51,18 @@ public class LecteurDonnees {
     public static java.util.Map<String, java.util.Map<String, String>> lireMatriceRoutes(String cheminFichier) {
         java.util.Map<String, java.util.Map<String, String>> matrice = new java.util.HashMap<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(cheminFichier))) {
+        // Utilisation explicite de UTF-8
+        try (java.io.BufferedReader br = new java.io.BufferedReader(
+                new java.io.InputStreamReader(new java.io.FileInputStream(cheminFichier),
+                        java.nio.charset.StandardCharsets.ISO_8859_1))) {
             String ligneHeader = br.readLine();
             if (ligneHeader == null)
                 return matrice;
+
+            // Enlever le BOM UTF-8 si present au debut du header
+            if (ligneHeader.startsWith("\uFEFF")) {
+                ligneHeader = ligneHeader.substring(1);
+            }
 
             String[] villesCols = ligneHeader.split(";");
             // villesCols[0] est vide ou "Villes"

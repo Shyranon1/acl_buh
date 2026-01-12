@@ -12,6 +12,12 @@ public class ComposantCarte extends JPanel {
         this.repaint();
     }
 
+    private java.util.Map<String, java.util.Map<String, String>> routesMap;
+
+    public void setRoutesMap(java.util.Map<String, java.util.Map<String, String>> routesMap) {
+        this.routesMap = routesMap;
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -47,19 +53,14 @@ public class ComposantCarte extends JPanel {
         if (!hasData)
             return;
 
-        // 2. Dessin
+        // 2. Dessin des Routes
         double totalDist = 0;
 
         for (Camion c : flotte) {
             List<Ville> tournee = c.getTourneeOrdonnee();
             if (tournee == null || tournee.isEmpty()) {
                 tournee = c.getVillesALivrer(); // Pas encore calculé
-                g2.setColor(Color.LIGHT_GRAY);
-            } else {
-                g2.setColor(c.getCouleur()); // Rouge ou Bleu
             }
-
-            g2.setStroke(new BasicStroke(2));
 
             for (int i = 0; i < tournee.size() - 1; i++) {
                 Ville v1 = tournee.get(i);
@@ -68,38 +69,130 @@ public class ComposantCarte extends JPanel {
                 Point p1 = toScreen(v1, w, h, padding, minLon, maxLon, minLat, maxLat);
                 Point p2 = toScreen(v2, w, h, padding, minLon, maxLon, minLat, maxLat);
 
-                // Ligne
+                // Déterminer le style de route
+                String type = "Inconnu";
+                if (routesMap != null) {
+                    if (routesMap.containsKey(v1.getNom()) && routesMap.get(v1.getNom()).containsKey(v2.getNom())) {
+                        type = routesMap.get(v1.getNom()).get(v2.getNom());
+                    } else if (routesMap.containsKey(v2.getNom())
+                            && routesMap.get(v2.getNom()).containsKey(v1.getNom())) {
+                        type = routesMap.get(v2.getNom()).get(v1.getNom());
+                    }
+                }
+
+                type = type.toLowerCase();
+                Stroke stroke;
+                Color col = c.getCouleur(); // Couleur de base du camion
+
+                // Styles
+                // Styles
+                // Styles High Contrast
+                if (type.contains("autoroute")) {
+                    stroke = new BasicStroke(6.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND); // TRES EPAIS
+                } else if (type.contains("rapide")) {
+                    stroke = new BasicStroke(4.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND); // EPAIS
+                } else if (type.contains("europe")) {
+                    float[] dash = { 10.0f, 10.0f }; // TIRETS TRES DISTINCTS (BLOCKY)
+                    stroke = new BasicStroke(5.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 10.0f, dash, 0.0f);
+                } else if (type.contains("national")) {
+                    float[] dash = { 5.0f, 5.0f }; // TIRETS COURTS
+                    stroke = new BasicStroke(2.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 10.0f, dash, 0.0f);
+                } else {
+                    stroke = new BasicStroke(1.0f); // FIN
+                }
+
+                g2.setStroke(stroke);
+                g2.setColor(col);
                 g2.drawLine(p1.x, p1.y, p2.x, p2.y);
 
                 // Distance (Km) au milieu
                 double distKm = calculDistance(v1, v2);
                 totalDist += distKm;
 
+                // Affichage discret de la distance
                 int midX = (p1.x + p2.x) / 2;
                 int midY = (p1.y + p2.y) / 2;
-
-                g2.setColor(Color.BLUE);
-                g2.setFont(new Font("SansSerif", Font.PLAIN, 10));
-                g2.drawString(String.format("%.0f", distKm), midX, midY);
-                g2.setColor(c.getCouleur()); // Restore couleur camion
+                // g2.setColor(Color.DARK_GRAY);
+                // g2.setFont(new Font("SansSerif", Font.PLAIN, 10));
+                // g2.drawString(String.format("%.0f", distKm), midX, midY);
             }
 
-            // Villes
+            // Villes (Dessin par dessus les routes)
             for (Ville v : tournee) {
                 Point p = toScreen(v, w, h, padding, minLon, maxLon, minLat, maxLat);
-                g2.setColor(Color.RED);
-                g2.fillOval(p.x - 5, p.y - 5, 10, 10);
+                g2.setColor(Color.WHITE);
+                g2.fillOval(p.x - 4, p.y - 4, 8, 8);
+                g2.setColor(Color.DARK_GRAY);
+                g2.drawOval(p.x - 4, p.y - 4, 8, 8);
 
-                g2.setColor(Color.BLUE);
-                g2.setFont(new Font("SansSerif", Font.BOLD, 12));
-                g2.drawString(v.getNom(), p.x + 8, p.y - 5);
+                g2.setColor(Color.BLACK);
+                g2.setFont(new Font("SansSerif", Font.BOLD, 11));
+                g2.drawString(v.getNom(), p.x + 6, p.y + 4);
             }
         }
 
         // Affichage total en bas
         g2.setColor(Color.BLACK);
-        g2.setFont(new Font("SansSerif", Font.BOLD, 14));
-        g2.drawString("Longueur chemin trouvé (en km) = " + (int) totalDist, 20, h - 20);
+        g2.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        g2.drawString("Longueur totale : " + (int) totalDist + " km", 20, h - 20);
+
+        // LEGENDE
+        drawLegend(g2, w, h);
+    }
+
+    private void drawLegend(Graphics2D g2, int w, int h) {
+        int boxW = 220; // Plus large pour le texte
+        int boxH = 130;
+        int x = w - boxW - 20;
+        int y = h - boxH - 20;
+
+        // Background
+        g2.setColor(new Color(255, 255, 255, 230));
+        g2.fillRoundRect(x, y, boxW, boxH, 10, 10);
+        g2.setColor(Color.GRAY);
+        g2.drawRoundRect(x, y, boxW, boxH, 10, 10);
+
+        // Titre
+        g2.setColor(Color.BLACK);
+        g2.setFont(new Font("Segoe UI", Font.BOLD, 12));
+        g2.drawString("Type de Route", x + 10, y + 20);
+
+        // Items
+        int rowH = 20;
+        int currY = y + 40;
+
+        // Autoroute
+        g2.setStroke(new BasicStroke(6.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        g2.setColor(Color.DARK_GRAY);
+        g2.drawLine(x + 10, currY, x + 50, currY);
+        g2.setFont(new Font("Segoe UI", Font.PLAIN, 11));
+        g2.drawString("Autoroute (Très Rapide)", x + 60, currY + 4);
+
+        currY += rowH;
+        // Voie Rapide
+        g2.setStroke(new BasicStroke(4.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        g2.drawLine(x + 10, currY, x + 50, currY);
+        g2.drawString("Voie Rapide (Rapide)", x + 60, currY + 4);
+
+        currY += rowH;
+        // Europeenne
+        float[] dashEu = { 10.0f, 10.0f };
+        g2.setStroke(new BasicStroke(5.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 10.0f, dashEu, 0.0f));
+        g2.drawLine(x + 10, currY, x + 50, currY);
+        g2.drawString("R. Européenne (Rapide)", x + 60, currY + 4);
+
+        currY += rowH;
+        // Nationale
+        float[] dashNat = { 5.0f, 5.0f };
+        g2.setStroke(new BasicStroke(2.0f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 10.0f, dashNat, 0.0f));
+        g2.drawLine(x + 10, currY, x + 50, currY);
+        g2.drawString("Nationale (Rapide)", x + 60, currY + 4);
+
+        currY += rowH;
+        // Autre
+        g2.setStroke(new BasicStroke(1.0f));
+        g2.drawLine(x + 10, currY, x + 50, currY);
+        g2.drawString("Dép/Autre (Standard)", x + 60, currY + 4);
     }
 
     private double calculDistance(Ville a, Ville b) {

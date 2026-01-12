@@ -26,7 +26,9 @@ Le client est une application lourde développée en Java (Swing) qui assure les
 *   **Expérience Utilisateur Fluidifiée** : Détection et ouverture automatique du dossier `./routes` au démarrage.
 *   **Chargement Dynamique** : Capacité de charger plusieurs fichiers JSON simultanément pour fusionner des régions.
 *   **Réactivité** : Utilisation de `SwingWorker` pour les calculs réseau et `SwingUtilities.invokeLater` pour garantir la fluidité de l'interface.
-*   **Compatibilité** : Compilation automatique ciblée pour Java 8 (via flags `--release 8`) assurant le fonctionnement sur la plupart des environnements académiques, quel que soit le JDK installé.
+*   **Compatibilité** : Compilation automatique ciblée pour Java 8 (via flags `--release 8`) assurant le fonctionnement sur la plupart des environnements académiques.
+*   **Visualisation "Haute Distinction"** : Rendu graphique avancé (Graphics2D) différenciant 5 types de routes par épaisseur et motifs (ex: "Route Européenne" en style "Voie Ferrée" pointillé).
+*   **Support Encodage ISO-8859-1** : Gestion native des fichiers CSV français (accents, métadonnées) garantissant une reconnaissance exacte des types de voirie.
 
 ### 2.3 Le Serveur (C++)
 Le serveur est un moteur de calcul haute performance conçu pour résoudre le TSP.
@@ -77,3 +79,4 @@ Le script `launch.ps1` a été développé pour automatiser tout le processus de
 1.  **Chargement** : L'app s'ouvre directement sur le dossier `routes`. Sélectionnez vos fichiers (Ctrl+Clic) et cliquez sur **"Charger Sélection"**.
 2.  **Configuration** : Ajustez le nombre de camions via le sélecteur.
 3.  **Calcul** : Cliquez sur **"Calculer Tournées"**. Le client envoie les données au serveur C++, qui retourne le chemin optimal (affiché en < 1 seconde grâce au C++).
+4.  **Analyse** : Utilisez la légende en bas à droite pour identifier les routes empruntées (Traits épais = Rapides, Pointillés = Européennes/Nationales).

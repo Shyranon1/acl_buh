@@ -94,6 +94,9 @@ chmod +x launch.sh
 ./launch.sh
 ```
 
+### Lancement Manuel
+Si les scripts automatiques ne fonctionnent pas, reportez-vous au fichier **`howToLaunch.txt`** à la racine du projet pour les instructions de compilation et de lancement manuel étape par étape.
+
 ### Utilisation
 1.  **Chargement** : L'app s'ouvre directement sur le dossier `routes`. Sélectionnez vos fichiers (Ctrl+Clic) et cliquez sur **"Charger Sélection"**.
 2.  **Configuration** : Ajustez le nombre de camions via le sélecteur.

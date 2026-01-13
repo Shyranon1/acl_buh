@@ -1,0 +1,56 @@
+HOW TO LAUNCH MANUALLY
+======================
+
+PREREQUISITES
+-------------
+1. Ensure you have Java Development Kit (JDK) installed (version 8 or newer).
+2. Ensure you have G++ (MinGW on Windows) installed for C++ compilation.
+3. Ensure a 'bin' directory exists in the project root. If not, create it:
+   mkdir bin
+
+WINDOWS COMMANDS
+----------------
+
+1. COMPILE
+   -------
+   Open a terminal (PowerShell or Command Prompt) in the project root.
+
+   Step A: Compile the Java Client
+   javac -d bin --release 8 -Xlint:-options -encoding UTF-8 client/*.java
+
+   Step B: Compile the C++ Server
+   g++ server/server_tsp.cpp -o server/server.exe -lws2_32
+
+2. RUN
+   ---
+   You need two separate terminals.
+
+   Terminal 1 (Server):
+   .\server\server.exe
+
+   Terminal 2 (Client):
+   java -cp bin client.ApplicationLivraison
+
+
+LINUX / MACOS COMMANDS
+----------------------
+
+1. COMPILE
+   -------
+   Open a terminal in the project root.
+
+   Step A: Compile the Java Client
+   javac -d bin --release 8 -Xlint:-options -encoding UTF-8 client/*.java
+
+   Step B: Compile the C++ Server
+   g++ server/server_tsp.cpp -o server/server
+
+2. RUN
+   ---
+   You need two separate terminals.
+
+   Terminal 1 (Server):
+   ./server/server
+
+   Terminal 2 (Client):
+   java -cp bin client.ApplicationLivraison

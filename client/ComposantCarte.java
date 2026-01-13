@@ -110,8 +110,7 @@ public class ComposantCarte extends JPanel {
                 totalDist += distKm;
 
                 // Affichage discret de la distance
-                int midX = (p1.x + p2.x) / 2;
-                int midY = (p1.y + p2.y) / 2;
+
                 // g2.setColor(Color.DARK_GRAY);
                 // g2.setFont(new Font("SansSerif", Font.PLAIN, 10));
                 // g2.drawString(String.format("%.0f", distKm), midX, midY);

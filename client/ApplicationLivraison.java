@@ -46,7 +46,7 @@ public class ApplicationLivraison extends JFrame {
     private final Color COLOR_BTN_ACTION = new Color(52, 152, 219); // Blue
     private final Color COLOR_BTN_LOAD = new Color(39, 174, 96); // Green
 
-    private JLabel statusLabel; // Promoted to field for access in helpers
+    private JLabel statusLabel;
     // Map<Depart, Map<Arrivee, Type>>
     private java.util.Map<String, java.util.Map<String, String>> routesMap = new java.util.HashMap<>();
 
@@ -163,7 +163,7 @@ public class ApplicationLivraison extends JFrame {
         listFichiers = new JList<>();
         listFichiers.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         listFichiers.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        refreshFileList(); // Initial load
+        refreshFileList();
 
         JScrollPane scrollPane = new JScrollPane(listFichiers);
         scrollPane.setMaximumSize(new Dimension(260, 100));
@@ -191,7 +191,7 @@ public class ApplicationLivraison extends JFrame {
                 return;
 
             repartirVilles(nb);
-            carte.setRoutesMap(routesMap); // Update map with road types
+            carte.setRoutesMap(routesMap);
             JOptionPane.showMessageDialog(this, "Chargement terminé : " + selectedNames.size() + " région(s).");
         });
         sidebar.add(Box.createRigidArea(new Dimension(0, 5)));
@@ -223,7 +223,7 @@ public class ApplicationLivraison extends JFrame {
         btnCharger.addActionListener(e -> {
             int nb = (Integer) spinnerNbCamions.getValue();
             chargerDonneesSimulees(nb);
-            carte.setRoutesMap(routesMap); // Pass the map of road types
+            carte.setRoutesMap(routesMap);
             carte.setFlotte(flotte);
             statusLabel.setText("Status: " + nb + " camions chargés.");
             JOptionPane.showMessageDialog(this, "Données chargées avec succès.\n" + nb + " camions prêts.");
@@ -245,7 +245,7 @@ public class ApplicationLivraison extends JFrame {
     private void addSectionHeader(JPanel panel, String text) {
         JLabel l = new JLabel(text);
         l.setFont(new Font("Segoe UI", Font.BOLD, 12));
-        l.setForeground(new Color(149, 165, 166)); // Greyish
+        l.setForeground(new Color(149, 165, 166)); // gris
         l.setAlignmentX(Component.LEFT_ALIGNMENT);
         panel.add(l);
         panel.add(Box.createRigidArea(new Dimension(0, 10)));
@@ -286,10 +286,7 @@ public class ApplicationLivraison extends JFrame {
     private void chargerDonneesSimulees(int nbCamions) {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Ouvrir fichiers de données");
-        // Update: Enable multi-selection
         fileChooser.setMultiSelectionEnabled(true);
-        // Remove directory selection to avoid confusion (user asked for multi-file
-        // selection)
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fileChooser.setCurrentDirectory(currentDirectory);
 
@@ -298,8 +295,6 @@ public class ApplicationLivraison extends JFrame {
 
         java.io.File[] selectedFiles = fileChooser.getSelectedFiles();
 
-        // Fallback for single selection if array is empty but selectedFile is set
-        // (legacy swing quirk)
         if (selectedFiles == null || selectedFiles.length == 0) {
             if (fileChooser.getSelectedFile() != null) {
                 selectedFiles = new java.io.File[] { fileChooser.getSelectedFile() };
@@ -311,7 +306,6 @@ public class ApplicationLivraison extends JFrame {
         toutesLesVillesGlobal.clear();
         routesMap.clear();
 
-        // Loop through all selected files and merge data
         for (java.io.File f : selectedFiles) {
             processFile(f, toutesLesVillesGlobal);
         }
@@ -347,7 +341,6 @@ public class ApplicationLivraison extends JFrame {
             System.out.println("Chargement routes depuis : " + csvPath);
             java.util.Map<String, java.util.Map<String, String>> newRoutes = LecteurDonnees.lireMatriceRoutes(csvPath);
 
-            // Deep merge to avoid overwriting existing cities' connections
             for (java.util.Map.Entry<String, java.util.Map<String, String>> entry : newRoutes.entrySet()) {
                 String source = entry.getKey();
                 java.util.Map<String, String> targets = entry.getValue();
@@ -413,7 +406,6 @@ public class ApplicationLivraison extends JFrame {
 
         if (labelCurrentDir != null) {
             String path = currentDirectory.getAbsolutePath();
-            // Shorten if too long
             if (path.length() > 30)
                 path = "..." + path.substring(path.length() - 27);
             labelCurrentDir.setText("Dossier: " + path);
@@ -448,7 +440,6 @@ public class ApplicationLivraison extends JFrame {
     }
 
     public static void main(String[] args) {
-        // Use Nimbus Look and Feel for Premium look and stability on Windows
         try {
             boolean nimbusFound = false;
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -468,7 +459,6 @@ public class ApplicationLivraison extends JFrame {
             }
         }
 
-        // Custom colors for Nimbus to match our Palette (Optional but nice)
         UIManager.put("control", new Color(236, 240, 241));
         UIManager.put("nimbusBase", new Color(44, 62, 80));
         UIManager.put("nimbusBlueGrey", new Color(44, 62, 80));

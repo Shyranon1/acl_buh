@@ -75,6 +75,25 @@ Le script `launch.ps1` a été développé pour automatiser tout le processus de
     *   Lancer le serveur C++ (port 8080).
     *   Lancer le client Java.
 
+### Lancement sur Linux / WSL
+Pour les utilisateurs Linux ou WSL (Windows Subsystem for Linux), un script équivalent `launch.sh` est disponible.
+
+**Prérequis :**
+*   `g++` (Compilateur C++)
+*   `default-jdk` (Kit de développement Java)
+
+**Installation des dépendances (Debian/Ubuntu/WSL) :**
+```bash
+sudo apt update
+sudo apt install g++ default-jdk
+```
+
+**Lancement :**
+```bash
+chmod +x launch.sh
+./launch.sh
+```
+
 ### Utilisation
 1.  **Chargement** : L'app s'ouvre directement sur le dossier `routes`. Sélectionnez vos fichiers (Ctrl+Clic) et cliquez sur **"Charger Sélection"**.
 2.  **Configuration** : Ajustez le nombre de camions via le sélecteur.

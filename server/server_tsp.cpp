@@ -17,6 +17,7 @@
 #include <memory> 
 #include <ctime>
 #include <cstdlib> 
+#include <random> 
 
 // --- ABSTRACTION RESEAU ---
 #ifdef _WIN32
@@ -207,7 +208,9 @@ public:
         for (int k = 0; k < nbRestarts; ++k) {
             vector<S> candidat = sommets;
             if (candidat.size() > 2) {
-                random_shuffle(candidat.begin() + 1, candidat.end());
+                std::random_device rd;
+                std::mt19937 g(rd());
+                std::shuffle(candidat.begin() + 1, candidat.end(), g);
             }
             candidat.push_back(candidat[0]); // Cycle
 
